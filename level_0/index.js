@@ -96,3 +96,26 @@ function solution(my_string, k) {
   // repeat() 메서드는 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열을 반환한다.
   return answer;
 }
+
+// 더 크게 합치기
+// 문제 설명
+// 연산 ⊕는 두 정수에 대한 연산으로 두 정수를 붙여서 쓴 값을 반환합니다. 예를 들면 다음과 같습니다.
+// 양의 정수 a와 b가 주어졌을 때, a ⊕ b와 b ⊕ a 중 더 큰 값을 return 하는 solution 함수를 완성해 주세요.
+// 단, a ⊕ b와 b ⊕ a가 같다면 a ⊕ b를 return 합니다.
+function solution(a, b) {
+  var answer = 0;
+  var num1 = `${a}${b}`;
+  var num2 = `${b}${a}`;
+  answer = Math.max(num1, num2);
+  return answer;
+}
+
+// n의 배수
+// 문제 설명
+// 정수 num과 n이 매개 변수로 주어질 때, num이 n의 배수이면 1을 return n의 배수가 아니라면 0을 return하도록 solution 함수를 완성해주세요.
+
+function solution(num, n) {
+  var answer = 0;
+  answer = num % n === 0 ? 1 : 0;
+  return answer;
+}
