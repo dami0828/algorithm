@@ -285,3 +285,34 @@ function solution(a, d, included) {
     return flag ? acc + a + d * i : acc;
   }, 0);
 }
+
+// 수 조작하기 1
+function solution(n, control) {
+  [...control].map((item) => {
+    if (item === "w") {
+      return (n += 1);
+    }
+    if (item === "s") {
+      return (n += -1);
+    }
+    if (item === "d") {
+      return (n += 10);
+    }
+    if (item === "a") {
+      return (n += -10);
+    }
+  });
+  return n;
+}
+
+// 다른사람풀이
+const operations = {
+  w: (n) => n + 1,
+  s: (n) => n - 1,
+  d: (n) => n + 10,
+  a: (n) => n - 10,
+};
+
+function solution(n, control) {
+  return [...control].reduce((prev, op) => operations[op](prev), n);
+}
