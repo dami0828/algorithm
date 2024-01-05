@@ -316,3 +316,39 @@ const operations = {
 function solution(n, control) {
   return [...control].reduce((prev, op) => operations[op](prev), n);
 }
+
+// 수 조작하기 2
+function solution(numLog) {
+  var answer = "";
+  for (let i = 1; i < numLog.length; i++) {
+    if (numLog[i] - numLog[i - 1] === 1) {
+      answer += "w";
+    }
+    if (numLog[i] - numLog[i - 1] === -1) {
+      answer += "s";
+    }
+    if (numLog[i] - numLog[i - 1] === 10) {
+      answer += "d";
+    }
+    if (numLog[i] - numLog[i - 1] === -10) {
+      answer += "a";
+    }
+  }
+  return answer;
+}
+// 다른 사람 풀이
+function solution(numLog) {
+  const convert = {
+    1: "w",
+    "-1": "s",
+    10: "d",
+    "-10": "a",
+  };
+
+  return numLog
+    .slice(1)
+    .map((v, i) => {
+      return convert[v - numLog[i]];
+    })
+    .join("");
+}
