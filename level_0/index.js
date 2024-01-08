@@ -361,3 +361,13 @@ function solution(start_num, end_num) {
   }
   return answer;
 }
+// 배열만들기2
+function solution(l, r) {
+  var answer = [];
+  for (let i = l; i <= r; i++) {
+    let str = String(i);
+    if (![...str].every((num) => num === "5" || num === "0")) continue;
+    answer.push(i);
+  }
+  return answer.length === 0 ? [-1] : answer;
+}
