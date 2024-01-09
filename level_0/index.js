@@ -371,3 +371,18 @@ function solution(l, r) {
   }
   return answer.length === 0 ? [-1] : answer;
 }
+
+// 홀수 vs 짝수
+function solution(num_list) {
+  const even = [];
+  const odd = [];
+
+  num_list.map((num, index) => {
+    return index % 2 === 0 ? even.push(num) : odd.push(num);
+  });
+
+  const evenSum = even.reduce((acc, cur) => acc + cur);
+  const oddSum = odd.reduce((acc, cur) => acc + cur);
+
+  return Math.max(evenSum, oddSum);
+}
