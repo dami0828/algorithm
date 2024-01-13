@@ -392,3 +392,23 @@ function solution(num_list) {
     return num_list.length >= 11 ? acc + cur : acc * cur;
   });
 }
+
+// 문자열 앞의 n글자
+function solution(my_string, n) {
+  var answer = "";
+  answer = my_string.slice(0, n);
+  return answer;
+}
+
+// n번째 원소부터
+function solution(num_list, n) {
+  var answer = [];
+  for (let i = n - 1; i < num_list.length; i++) {
+    answer.push(num_list[i]);
+  }
+  return answer;
+}
+// 다른사람 풀이
+function solution(num_list, n) {
+  return num_list.slice(n - 1);
+}
