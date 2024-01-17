@@ -408,7 +408,33 @@ function solution(num_list, n) {
   }
   return answer;
 }
-// 다른사람 풀이
+// 다른사람 풀이 - n번째원소
 function solution(num_list, n) {
   return num_list.slice(n - 1);
+}
+
+// 배열만들기1
+function solution(n, k) {
+  var answer = [];
+  for (let i = 1; i <= n; i++) {
+    if (i % k === 0) {
+      answer.push(i);
+    }
+  }
+  return answer;
+}
+// 배열만들기3
+function solution(arr, intervals) {
+  var answer = [];
+  const a = intervals[0];
+  const b = intervals[1];
+  answer.push(...arr.slice(a[0], a[1] + 1));
+  answer.push(...arr.slice(b[0], b[1] + 1));
+  return answer;
+}
+
+// 다른사람풀이 - 배열3
+function solution(arr, intervals) {
+  const [[a, b], [c, d]] = intervals;
+  return [...arr.slice(a, b + 1), ...arr.slice(c, d + 1)];
 }
