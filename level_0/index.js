@@ -438,3 +438,20 @@ function solution(arr, intervals) {
   const [[a, b], [c, d]] = intervals;
   return [...arr.slice(a, b + 1), ...arr.slice(c, d + 1)];
 }
+
+// 글자 이어 붙여 문자열 만들기
+function solution(my_string, index_list) {
+  var answer = "";
+  for (let i = 0; i < index_list.length; i++) {
+    answer += my_string[index_list[i]];
+  }
+  return answer;
+}
+// 다른사람 풀이
+function solution(my_string, index_list) {
+  return index_list.map((i) => my_string[i]).join("");
+}
+// 다른사람풀이2
+function solution(my_string, index_list) {
+  return index_list.reduce((result, i) => result + my_string[i], "");
+}
