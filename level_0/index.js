@@ -455,3 +455,20 @@ function solution(my_string, index_list) {
 function solution(my_string, index_list) {
   return index_list.reduce((result, i) => result + my_string[i], "");
 }
+// 9로 나눈 나머지
+function solution(number) {
+  return [...number].reduce((acc, cur) => Number(acc) + Number(cur)) % 9;
+}
+// n번째 원소까지
+function solution(num_list, n) {
+  return num_list.slice(0, n);
+}
+// 순서 바꾸기
+function solution(num_list, n) {
+  return [...num_list.slice(n), ...num_list.slice(0, n)];
+}
+// 순서바꾸기 다른사람풀이
+function solution(num_list, n) {
+  num_list.push(...num_list.splice(0, n));
+  return num_list;
+}
