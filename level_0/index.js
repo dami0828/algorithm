@@ -472,3 +472,19 @@ function solution(num_list, n) {
   num_list.push(...num_list.splice(0, n));
   return num_list;
 }
+
+// 문자열 뒤의 n글자
+function solution(my_string, n) {
+  return my_string.slice(-n);
+}
+
+// n개 간격 원소들
+function solution(num_list, n) {
+  var answer = [];
+  for (let i = 0; i < num_list.length; i += n) {
+    answer.push(num_list[i]);
+  }
+  return answer;
+}
+// n개 간격 원소들 다른사람 풀이
+const solution = (num_list, n) => num_list.filter((_, i) => !(i % n));
