@@ -488,3 +488,25 @@ function solution(num_list, n) {
 }
 // n개 간격 원소들 다른사람 풀이
 const solution = (num_list, n) => num_list.filter((_, i) => !(i % n));
+
+// 글자지우기
+function solution(my_string, indices) {
+  var answer = [];
+  answer = [...my_string].map((str, index) => {
+    return indices.includes(index) ? false : str;
+  });
+  return answer.filter((s) => s).join("");
+}
+
+// 글자지우기 다른사람풀이 1
+function solution(m, a) {
+  var answer = "";
+  for (let i = 0; i < m.length; i++) {
+    if (!a.includes(i)) {
+      answer += m[i];
+    }
+  }
+  return answer;
+}
+// 글자지우기 다른사람풀이 2
+const solution = (s, d) => [...s].filter((v, i) => !d.includes(i)).join("");
