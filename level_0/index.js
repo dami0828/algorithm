@@ -510,3 +510,10 @@ function solution(m, a) {
 }
 // 글자지우기 다른사람풀이 2
 const solution = (s, d) => [...s].filter((v, i) => !d.includes(i)).join("");
+
+// 원하는 문열 찾기
+function solution(myString, pat) {
+  const a = myString.toUpperCase();
+  const b = pat.toUpperCase();
+  return a.includes(b) ? 1 : 0;
+}
