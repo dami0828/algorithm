@@ -517,3 +517,27 @@ function solution(myString, pat) {
   const b = pat.toUpperCase();
   return a.includes(b) ? 1 : 0;
 }
+
+// 소문자로 변경
+function solution(myString) {
+  return myString.toLowerCase();
+}
+
+// 1로 만들기
+function solution(num_list) {
+  let cnt = 0; // num_list의 원소들이 1이될때까지 카운트할 변수
+  for (num of num_list) {
+    // num_list 배열을 반복하면서
+    let number = num; // number변수 초기값을 num으로 두고서 무한 반복시작함
+    while (number !== 1) {
+      if (number % 2 === 0) {
+        number = number / 2;
+        cnt += 1;
+      } else {
+        number = (number - 1) / 2;
+        cnt += 1;
+      }
+    }
+  }
+  return cnt;
+}
