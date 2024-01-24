@@ -541,3 +541,41 @@ function solution(num_list) {
   }
   return cnt;
 }
+
+// 배열에서 문자열 대소문자 변환하기
+function solution(strArr) {
+  return strArr.map((str, index) => {
+    if (index % 2 !== 0) {
+      return str.toUpperCase();
+    } else {
+      return str.toLowerCase();
+    }
+  });
+}
+
+// 왼쪽 오른쪽
+// 내가 푼거
+function solution(str_list) {
+  let findStr = "";
+  const findIndex = str_list.findIndex((str) => {
+    if (str === "l" || str === "r") {
+      findStr = str;
+      return str;
+    }
+  });
+  if (findStr === "l") {
+    return str_list.slice(0, findIndex);
+  } else if (findStr === "r") {
+    return str_list.slice(findIndex + 1);
+  } else {
+    return [];
+  }
+}
+// 왼쪽 오른쪽 다른사람 풀이
+function solution(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === "l") return arr.slice(0, i);
+    if (arr[i] === "r") return arr.slice(i + 1);
+  }
+  return [];
+}
