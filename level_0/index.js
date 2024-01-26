@@ -584,3 +584,14 @@ function solution(arr) {
 function solution(my_string) {
   return my_string.split(" ").filter((str) => str);
 }
+
+// 특정한 문자를 대문자로 바꾸기
+function solution(my_string, alp) {
+  const answer = [...my_string].map((str) => {
+    return str === alp ? str.toUpperCase() : str;
+  });
+  return answer.join("");
+}
+// 다른사람풀이
+// replaceAll() 메서드는 pattern의 모든 일치 항목이 replacement로 대체된 새 문자열을 반환합니다.
+const solution = (s, a) => s.replaceAll(a, a.toUpperCase());
