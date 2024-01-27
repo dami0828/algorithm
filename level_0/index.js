@@ -595,3 +595,12 @@ function solution(my_string, alp) {
 // 다른사람풀이
 // replaceAll() 메서드는 pattern의 모든 일치 항목이 replacement로 대체된 새 문자열을 반환합니다.
 const solution = (s, a) => s.replaceAll(a, a.toUpperCase());
+
+// A 강조하기
+function solution(myString) {
+  return [...myString]
+    .map((str) => {
+      return str === "a" || str === "A" ? str.toUpperCase() : str.toLowerCase();
+    })
+    .join("");
+}
