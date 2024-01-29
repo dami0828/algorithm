@@ -604,3 +604,17 @@ function solution(myString) {
     })
     .join("");
 }
+
+// 배열 비교하기
+function solution(arr1, arr2) {
+  var answer = 0;
+  const array1 = arr1.reduce((acc, cur) => (acc += cur));
+  const array2 = arr2.reduce((acc, cur) => (acc += cur));
+
+  if (arr1.length !== arr2.length) {
+    return (answer = arr1.length > arr2.length ? 1 : -1);
+  } else {
+    return (answer = array1 > array2 ? 1 : array1 < array2 ? -1 : 0);
+  }
+  return answer;
+}
