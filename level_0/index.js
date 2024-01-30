@@ -618,3 +618,10 @@ function solution(arr1, arr2) {
   }
   return answer;
 }
+
+// ad 제거하기
+function solution(strArr) {
+  return strArr.filter((str) => {
+    return !str.includes("ad");
+  });
+}
