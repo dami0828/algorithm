@@ -625,3 +625,16 @@ function solution(strArr) {
     return !str.includes("ad");
   });
 }
+
+// 수열과 구간 쿼리1 🔥
+function solution(arr, queries) {
+  for (let i = 0; i < queries.length; i++) {
+    let [s, e] = queries[i];
+    for (let j = 0; j <= e; j++) {
+      if (s <= j && j <= e) {
+        arr[j]++;
+      }
+    }
+  }
+  return arr;
+}
